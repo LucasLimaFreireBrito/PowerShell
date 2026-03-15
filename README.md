@@ -32,3 +32,9 @@ Ideal para sistemas que possuem **restrição de upload por tamanho de arquivo**
 ---
 
 # 📦 Estrutura do Projeto
+1️⃣ Identifica PDFs na pasta
+2️⃣ Verifica tamanho do arquivo
+3️⃣ Se ≤ 4780 KB → mantém
+4️⃣ Se > 4780 KB → aplica compressão
+5️⃣ Se ainda > 4780 KB → divide o documento
+6️⃣ Agrupa páginas até gerar arquivos ≤ 4780 KB
