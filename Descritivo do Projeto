@@ -1,0 +1,82 @@
+=================================================
+PROCESSO: NORMALIZAÇÃO E DIVISÃO DE ARQUIVOS PDF
+=================================================
+
+## OBJETIVO
+
+Automatizar o tratamento de arquivos PDF para garantir que cada
+documento final tenha tamanho máximo de 4.780 KB, atendendo às
+restrições de sistemas que limitam o tamanho de upload de arquivos.
+
+## FERRAMENTAS UTILIZADAS
+
+* PowerShell
+  Responsável pela automação e execução do script.
+
+* Ghostscript
+  Utilizado para compressão, extração e recomposição de arquivos PDF.
+
+## FLUXO DO PROCESSO
+
+1. Leitura dos Arquivos
+   O script identifica automaticamente todos os arquivos PDF
+   presentes na pasta de processamento.
+
+2. Verificação do Tamanho
+   Cada arquivo é analisado para verificar seu tamanho em bytes.
+
+3. Arquivos Dentro do Limite
+   Caso o arquivo possua tamanho igual ou inferior a 4.780 KB,
+   ele é mantido sem alterações.
+
+4. Compressão do PDF
+   Se o arquivo ultrapassar o limite estabelecido, é aplicada
+   uma compressão no PDF, reduzindo a resolução das imagens
+   internas para diminuir o tamanho do arquivo.
+
+5. Reavaliação do Tamanho
+   Após a compressão, o arquivo é novamente analisado:
+
+   * Se estiver ≤ 4.780 KB → o arquivo comprimido substitui o original.
+
+6. Divisão do Documento
+   Caso o arquivo ainda permaneça acima do limite, o documento
+   passa por um processo de divisão.
+
+7. Agrupamento Inteligente de Páginas
+   As páginas do PDF são agrupadas automaticamente em blocos,
+   garantindo que cada novo arquivo gerado permaneça abaixo
+   do limite de 4.780 KB.
+
+8. Geração dos Arquivos Finais
+   Os arquivos resultantes são criados seguindo o padrão:
+
+   NomeArquivo - Parte 1.pdf
+   NomeArquivo - Parte 2.pdf
+   NomeArquivo - Parte 3.pdf
+
+9. Limpeza de Arquivos Temporários
+   Arquivos temporários gerados durante o processo são removidos
+   automaticamente ao final da execução.
+
+## RESULTADO ESPERADO
+
+Após a execução do processo:
+
+* Todos os arquivos PDF gerados estarão dentro do limite de 4.780 KB.
+* Documentos maiores serão automaticamente divididos em partes.
+* Os arquivos estarão prontos para envio ou upload em sistemas
+  que possuam restrição de tamanho de arquivo.
+
+## BENEFÍCIOS DO PROCESSO
+
+* Automação completa do tratamento de PDFs
+* Redução de tempo operacional
+* Padronização dos documentos gerados
+* Eliminação de divisão manual de arquivos
+* Maior eficiência no envio de documentos para sistemas
+
+====================================================================
+AUTOMAÇÃO: Script PowerShell + Ghostscript
+FINALIDADE: Preparação automática de PDFs para upload em sistemas
+====================================================================
