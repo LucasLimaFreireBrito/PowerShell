@@ -1,0 +1,27 @@
+0 - Precisa instalar o Ghostscript
+
+Download
+Site oficial:
+https://www.ghostscript.com/releases/gsdnld.html
+
+1️ - Abra o PowerShell
+
+	Pressione:
+	Win + X → Windows PowerShell
+
+	ou procure por PowerShell no menu iniciar.
+
+2 - Vá até a pasta do script
+
+	No seu caso a pasta é:
+	C:\Nova pasta\Guias de Serviço\Mês 09 2025 - Convertido
+
+	Então execute:
+	cd "C:\Nova pasta\Guias de Serviço\Mês 09 2025 - Convertido"
+
+	⚠ As aspas são importantes por causa dos espaços.
+
+3️ - Execute o script
+
+	Agora rode:
+	powershell -ExecutionPolicy Bypass -File processar_pdf.ps1
